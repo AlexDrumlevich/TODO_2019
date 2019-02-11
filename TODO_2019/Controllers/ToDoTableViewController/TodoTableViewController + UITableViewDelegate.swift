@@ -14,6 +14,7 @@ extension ToDoTableViewController {
         case .delete:
             todos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            deleteFromRealm(id: indexPath.row)
         case .insert:
             break
         case .none:
